@@ -57,7 +57,7 @@ if has('autocmd')
 	au FileType python setl ts=8 sw=4 sts=4 et
 	au FileType go setl ts=4 sts=4 sw=4
 	au StdinReadPre * let s:std_in=1
-	au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+	au VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif | if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 endif
 
 filetype plugin indent on
@@ -84,6 +84,36 @@ nmap <silent> <C-n>	 :update<CR>:bn<CR>
 imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
 cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
+
+if has("cscope")
+	nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+	nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+	nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+	nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+	nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+	nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+	nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+	nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+	nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+	nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
+endif
 
 if has("mac")
 	nmap <silent> <C-d> <Plug>DashSearch

@@ -11,10 +11,10 @@ Darwin)
 	;;
 Linux)
 	sudo apt-get install zsh vim git python gdb tmux
-	if [ ! -d ~/pwndbg ]; then
-		git clone https://github.com/pwndbg/pwndbg ~/pwndbg
-		sh ~/pwndbg/setup.sh
-	fi
+	#if [ ! -d ~/pwndbg ]; then
+	#	git clone https://github.com/pwndbg/pwndbg ~/pwndbg
+	#	sh ~/pwndbg/setup.sh
+	#fi
 	;;
 esac
 

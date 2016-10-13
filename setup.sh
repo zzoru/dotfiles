@@ -27,8 +27,8 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 dot_setup () {
-	dotfile = "~/.$1"
-	cp $1 dotfile
+	dotfile="$HOME/.$1"
+	cp $1 $dotfile
 }
 
 dot_setup tmux.conf

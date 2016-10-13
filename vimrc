@@ -12,16 +12,6 @@ set incsearch
 set ignorecase
 set wildmenu wildmode=list:full
 
-" Set Hotkey
-nmap <silent> <Tab> 15<Right>
-vmap <silent> <Tab> <C-o>15<Right>
-nmap <silent> <S-Tab> 15<Left>
-vmap <silent> <S-Tab> <C-o>15<Left>
-nmap <silent> <C-n>	 :update<CR>:bn<CR>
-imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
-vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
-cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
-
 " Set ctags
 set tags=tags,./tags
 set exrc
@@ -84,3 +74,17 @@ let g:syntastic_check_on_wq = 0
 
 " Set color-scheme
 colorscheme molokai
+
+" Set Hotkey
+nmap <silent> <Tab> 15<Right>
+vmap <silent> <Tab> <C-o>15<Right>
+nmap <silent> <S-Tab> 15<Left>
+vmap <silent> <S-Tab> <C-o>15<Left>
+nmap <silent> <C-n>	 :update<CR>:bn<CR>
+imap <silent> <C-n> <ESC>:update<CR>:bn<CR>
+vmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
+cmap <silent> <C-n> <ESC>:update<CR>:bn<CR>
+
+if has("mac")
+	nmap <silent> <C-d> <Plug>DashSearch
+endif

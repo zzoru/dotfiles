@@ -10,7 +10,7 @@ Darwin)
 	fi
 	;;
 Linux)
-	sudo apt-get install zsh vim git python gdb tmux
+	sudo apt-get install zsh vim git python gdb tmux curl
 	#if [ ! -d ~/pwndbg ]; then
 	#	git clone https://github.com/pwndbg/pwndbg ~/pwndbg
 	#	sh ~/pwndbg/setup.sh

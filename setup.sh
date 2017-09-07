@@ -34,4 +34,5 @@ dot_setup () {
 dot_setup tmux.conf
 dot_setup vimrc
 dot_setup gvimrc
-#dot_setup zshrc
+dot_setup zshrc
+vim +PluginInstall +qall

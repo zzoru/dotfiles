@@ -47,7 +47,7 @@ Plugin 'fatih/vim-go'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ervandew/supertab'
-Bundle 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 

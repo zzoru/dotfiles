@@ -18,10 +18,6 @@ Linux)
 	;;
 esac
 
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
 if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
@@ -35,4 +31,3 @@ dot_setup tmux.conf
 dot_setup vimrc
 dot_setup gvimrc
 dot_setup zshrc
-vim +PluginInstall +qall

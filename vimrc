@@ -1,13 +1,36 @@
-scripte utf-8
-set term=xterm-256color
-
 set nocompatible
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+Plug 'rizzatti/dash.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'fatih/vim-go'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'ervandew/supertab'
+Plug 'crusoexia/vim-monokai'
+Plug 'w0rp/ale'
+call plug#end()
+
+syntax on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
 set backspace=start,eol,indent
 set whichwrap=b,s,[,],<,>,~
 set mouse=
-syntax on
 set number
-set nohlsearch
+set hlsearch
 set incsearch
 set ignorecase
 set wildmenu wildmode=list:full
@@ -37,17 +60,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'fatih/vim-go'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ervandew/supertab'
-Plugin 'tomasr/molokai'
 
 call vundle#end()
 
@@ -67,13 +79,15 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Set color-scheme
-colorscheme molokai
+colorscheme monokai
 
 " Set Hotkey
 nmap <silent> <Tab> 15<Right>

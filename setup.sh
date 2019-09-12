@@ -10,11 +10,12 @@ Darwin)
 	fi
 	;;
 Linux)
-	sudo apt-get install zsh vim git python gdb tmux curl
-	#if [ ! -d ~/pwndbg ]; then
-	#	git clone https://github.com/pwndbg/pwndbg ~/pwndbg
-	#	sh ~/pwndbg/setup.sh
-	#fi
+	if [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+		exit 0;
+	fi
+	chsh /home/linuxbrew/.linuxbrew/bin/zsh
+	brew install zsh vim git python tmux
 	;;
 esac
 

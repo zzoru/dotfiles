@@ -6,7 +6,7 @@ Darwin)
 		echo "First Install brew!";
 		exit 0;
 	else
-		brew install zsh vim git python tmux
+		brew install zsh vim git python tmux nodejs
 	fi
 	;;
 Linux)
@@ -15,7 +15,7 @@ Linux)
 		exit 0;
 	fi
 	chsh /home/linuxbrew/.linuxbrew/bin/zsh
-	brew install zsh vim git python tmux
+	brew install zsh vim git python tmux nodejs
 	;;
 esac
 

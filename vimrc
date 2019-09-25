@@ -20,6 +20,7 @@ Plug 'ervandew/supertab'
 Plug 'crusoexia/vim-monokai'
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax on

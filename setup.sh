@@ -23,6 +23,11 @@ if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
+if [ ! -d ~/.cargo ]; then
+    sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
+    sh -c "$(~/.cargo/bin/rustup component add rls rust-analysis rust-src)"
+fi
+
 dot_setup () {
 	dotfile="$HOME/.$1"
 	cp $1 $dotfile

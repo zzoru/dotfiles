@@ -19,6 +19,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ervandew/supertab'
 Plug 'crusoexia/vim-monokai'
 Plug 'w0rp/ale'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 syntax on

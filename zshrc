@@ -49,7 +49,7 @@ plugins=(git colorize github pip python brew osx zsh-syntax-highligting sublime 
 
 # User configuration
 
-export PATH=$PATH:~/bin/:~/Library/Android/sdk/platform-tools
+export PATH=$PATH:~/bin/:~/Library/Android/sdk/platform-tools:~/.cargo/bin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

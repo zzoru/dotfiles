@@ -10,22 +10,19 @@ Darwin)
 	fi
 	;;
 Linux)
+	sudo apt-get install build-essential curl file git
 	if [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-		exit 0;
+		echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
+		eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+		brew install zsh vim git python tmux
+		chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 	fi
-	chsh /home/linuxbrew/.linuxbrew/bin/zsh
-	brew install zsh vim git python tmux nodejs
 	;;
 esac
 
 if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
-
-if [ ! -d ~/.cargo ]; then
-    sh -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)"
-    sh -c "$(~/.cargo/bin/rustup component add rls rust-analysis rust-src)"
 fi
 
 dot_setup () {

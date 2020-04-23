@@ -49,7 +49,7 @@ plugins=(git colorize github pip python brew osx zsh-syntax-highligting sublime 
 
 # User configuration
 
-export PATH=$PATH:~/bin/:~/Library/Android/sdk/platform-tools:~/.cargo/bin
+export PATH=$PATH:~/bin/:/home/linuxbrew/.linuxbrew/bin/
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -88,5 +88,4 @@ if [ "$TERM" = "xterm" ]; then
    export TERM=xterm-256color
 fi
 
-alias tmux='tmux -2'  # for 256color
 alias tmux='tmux -u'  # to get rid of unicode rendering problem

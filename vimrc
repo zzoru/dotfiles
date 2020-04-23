@@ -57,15 +57,6 @@ if has('conceal')
 	set conceallevel=2 concealcursor=i
 endif
 
-" Set Plugin
-set rtp+=~/.vim/bundle/Vundle.vim
-filetype off
-call vundle#begin()
-
-
-call vundle#end()
-
-
 " Set autocommand
 if has('autocmd')
 	au FileType python setl ts=8 sw=4 sts=4 et

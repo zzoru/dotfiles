@@ -14,8 +14,8 @@ Linux)
 	if [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 		eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-		brew install zsh vim git python tmux
-		echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.zshrc
+		brew install zsh vim git python tmux fd ag bat navi exa pt
+        echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.zshrc
         sudo echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells
 		sudo chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 	fi

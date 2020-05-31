@@ -13,10 +13,11 @@ Linux)
 	sudo apt-get install build-essential curl file git
 	if [ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-		echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.profile
 		eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 		brew install zsh vim git python tmux
-		chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
+		echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >>~/.zshrc
+        sudo echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells
+		sudo chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 	fi
 	;;
 esac

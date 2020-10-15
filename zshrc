@@ -45,15 +45,12 @@ ZSH_THEME="pygmalion"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+source $ZSH/oh-my-zsh.sh
 plugins=(git colorize github pip python brew osx zsh-syntax-highligting sublime tmux)
 
 # User configuration
-
 export PATH=$PATH:~/bin/:/home/linuxbrew/.linuxbrew/bin/
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
